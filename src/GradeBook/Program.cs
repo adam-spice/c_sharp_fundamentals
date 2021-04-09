@@ -3,44 +3,21 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
+
     class Program
     {
         static void Main(string[] args)
         {
-            var x = 34.1;
-            var y = 17.2;
-            var result = x + y;
-            Console.WriteLine(result);
+            var book = new Book("Adam's grade book");
+            book.AddGrade(89.1);
+            book.AddGrade(90.5);
+            book.AddGrade(77.5);
+            var stats = book.GetStats();
 
-            var numbers = new [] { 12.7, 10.3, 6.11 };
-            var numbersResult = 0.0;
-            foreach (double number in numbers)
-            {
-                numbersResult += number;
-            }
-            System.Console.WriteLine(numbersResult);
+            Console.WriteLine($"The lowest grade is {stats.Low}");
+            Console.WriteLine($"The highest grade is {stats.High}");
+            Console.WriteLine($"The average grade is {stats.Average:N1}");
 
-            var grades = new List<double>() { 12.7, 10.3, 6.11, 4.1 };
-            grades.Add(56.1);
-
-            var gradesResult = 0.0;
-            foreach (double number in grades)
-            {
-                gradesResult += number;
-            }
-            gradesResult /= grades.Count;
-            System.Console.WriteLine($"The average grade is {gradesResult:N1}");
-
-
-
-            if(args.Length >0)
-            {
-                Console.WriteLine($"Hello, {args[0]}!");
-            }
-            else
-            {
-                Console.WriteLine("Hello!");
-            }
         }
     }
 }
