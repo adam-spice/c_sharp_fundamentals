@@ -6,12 +6,12 @@ namespace GradeBook
     public class Book
     {
         private List<double> grades;
-        private string name;
+        public string Name;
         private double result;
         public Book(string name)
         {
             this.grades = new List<double>();
-            this.name = name;
+            Name = name;
         }
 
         public void AddGrade(double grade)
@@ -21,7 +21,7 @@ namespace GradeBook
 
         public string GetName()
         {
-            return this.name;
+            return Name;
         }
 
         public Stats GetStats()
